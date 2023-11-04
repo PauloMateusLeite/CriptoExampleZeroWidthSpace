@@ -5,25 +5,28 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-
+//Thisis  only to tests if criptography works with zero width spaces
 public class Program
 {
   public static void Main()
   {
-      string zws = "​"; // Caractere Invisível
+      string zws = "​"; // Invisible Character (zero width space)
       string normal = "paulo";
-      string zuado = "paul​o";
+      string withZws = "paul​o";
 
-        if(normal == zuado)
-        Console.WriteLine("1true");
-        else
-        Console.WriteLine("1false​");
+      //Tests to show the strings are different
+      if(normal == withZws)
+      Console.WriteLine("1true");
+      else
+      Console.WriteLine("1false​");
 
-        if(string.IsNullOrEmpty(zws))
-        Console.WriteLine("2true");
-        else
-        Console.WriteLine("2false​");
- 
+      //To show that the zws is not empty
+      if(string.IsNullOrEmpty(zws))
+      Console.WriteLine("2true");
+      else
+      Console.WriteLine("2false​");
+
+      //show the invisible string size
       Console.WriteLine(zws.Length);
 
       string key = "teste"; 
